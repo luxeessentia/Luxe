@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Luxe Essentials - FAQ</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="logo">Luxe Essentials</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="login.html">Login/Register</a></li>
+      <li><a href="orders.html">Orders & Returns</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="faq.html" class="active">FAQ</a></li>
+    </ul>
+  </aside>
+
+  <header class="mobile-header">
+    <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+    <div class="mobile-logo">Luxe Essentials</div>
+    <button id="cart-button" aria-label="Open cart">&#128722;</button>
+  </header>
+
+  <main class="content">
+    <h2>Frequently Asked Questions</h2>
+
+    <section class="faq-item">
+      <h3>What is your return policy?</h3>
+      <p>You can return items within 48 hours of purchase. Items must be unused and in original packaging.</p>
+    </section>
+
+    <section class="faq-item">
+      <h3>How long does shipping take?</h3>
+      <p>We use USPS for shipping:<br>
+      - Standard Shipping: 3-5 business days<br>
+      - Express Shipping: 1-3 business days</p>
+    </section>
+
+    <section class="faq-item">
+      <h3>Do you ship internationally?</h3>
+      <p>Currently, we only ship within the United States.</p>
+    </section>
+
+    <section class="faq-item">
+      <h3>How can I track my order?</h3>
+      <p>You can track your order on the <a href="orders.html">Orders & Returns</a> page using your order number and email.</p>
+    </section>
+
+    <section class="faq-item">
+      <h3>How do I contact customer service?</h3>
+      <p>You can contact us via the <a href="contact.html">Contact</a> page.</p>
+    </section>
+  </main>
+
+  <div class="sticky-shipping">
+    📦 FREE STANDARD SHIPPING ON U.S. ORDERS $50+ | FREE EXPRESS SHIPPING ON U.S. ORDERS $100+
+  </div>
+
+  <aside id="cart-sidebar" class="cart-sidebar">
+    <h2>Your Cart</h2>
+    <div id="cart-items"></div>
+    <button id="checkout-button" onclick="location.href='checkout.html'">Checkout</button>
+    <button id="close-cart">Close</button>
+  </aside>
+</body>
+</html>
