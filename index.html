@@ -2,11 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Luxe Essentials - Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Luxe Essentials</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
   <script defer src="script.js"></script>
 </head>
 <body>
@@ -15,9 +14,6 @@
   <header class="mobile-header">
     <button class="menu-toggle">&#9776;</button>
     <h1 class="mobile-logo">LUXE ESSENTIALS</h1>
-    <div class="cart-icon">
-      🛒<span id="cart-count" class="cart-count">0</span>
-    </div>
   </header>
 
   <!-- Sidebar -->
@@ -34,43 +30,41 @@
     </ul>
   </nav>
 
+  <!-- Cart Icon -->
+  <div class="cart-icon">
+    🛒<span class="cart-count">2</span>
+  </div>
+
   <!-- Main Content -->
   <main class="content">
-    <section class="hero">
-      <h2>$5 OFF YOUR FIRST ORDER</h2>
-      <p>Create an account and get $5 off your first order</p>
-      <a href="login.html" class="btn">SIGN UP</a>
+    <!-- Hero Slider -->
+    <section class="hero-slider">
+      <div class="slider-text">
+        <div class="slide active">💸 Get $5 OFF your first order when you sign up!</div>
+        <div class="slide">👜 Handmade Bags & Purses</div>
+        <div class="slide">🔌 Tech Accessories</div>
+        <div class="slide">💆‍♀️ Wellness Essentials</div>
+        <div class="slide">📱 Trendy Phone Cases</div>
+      </div>
+      <a href="login.html" class="btn hero-btn">Sign Up</a>
     </section>
 
+    <!-- Featured Categories -->
     <section class="category-section">
-      <h3>HANDMADE BAGS</h3>
+      <h3>Featured Products</h3>
       <div class="product-grid">
-        <img src="images/handmade-bag-1.jpg" alt="Handmade Bag 1" />
-        <img src="images/handmade-bag-2.jpg" alt="Handmade Bag 2" />
-      </div>
-
-      <h3>TECH</h3>
-      <div class="product-grid">
-        <img src="images/tech-1.jpg" alt="Tech Product 1" />
-        <img src="images/tech-2.jpg" alt="Tech Product 2" />
-      </div>
-
-      <h3>WELLNESS</h3>
-      <div class="product-grid">
-        <img src="images/wellness-1.jpg" alt="Wellness Product 1" />
-        <img src="images/wellness-2.jpg" alt="Wellness Product 2" />
-      </div>
-
-      <h3>PHONE CASES</h3>
-      <div class="product-grid">
-        <img src="images/phone-case-1.jpg" alt="Phone Case 1" />
-        <img src="images/phone-case-2.jpg" alt="Phone Case 2" />
+        <img src="images/bag1.jpg" alt="Handmade Bag">
+        <img src="images/tech1.jpg" alt="Tech Product">
+        <img src="images/wellness1.jpg" alt="Wellness Product">
+        <img src="images/phone1.jpg" alt="Phone Case">
       </div>
     </section>
   </main>
 
   <!-- Sticky Shipping Promo -->
-  <div class="sticky-shipping">📦 FREE STANDARD SHIPPING ON U.S. ORDERS $50+ | FREE EXPRESS SHIPPING ON U.S. ORDERS $100+</div>
+  <div class="sticky-shipping">
+    📦 FREE STANDARD SHIPPING ON U.S. ORDERS $50+ | FREE EXPRESS SHIPPING ON U.S. ORDERS $100+
+  </div>
 
 </body>
 </html>
