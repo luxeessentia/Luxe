@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Luxe Essentials – Login/Register</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header class="mobile-header">
+    <button class="menu-toggle">&#9776;</button>
+    <h1 class="mobile-logo">LUXE ESSENTIALS</h1>
+    <div class="cart-icon">🛒<span id="cart-count" class="cart-count">0</span></div>
+  </header>
+  <nav class="sidebar">
+    <div class="logo">LUXE ESSENTIALS</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="login.html" class="active">Login/Register</a></li>
+      <li><a href="returns.html">Returns</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+  <main class="content">
+    <section class="auth-section">
+      <h2>Login</h2>
+      <form>
+        <label>Email</label>
+        <input type="email" required>
+        <label>Password</label>
+        <input type="password" required>
+        <button class="btn">Login</button>
+      </form>
+    </section>
+    <section class="auth-section">
+      <h2>Register</h2>
+      <form>
+        <label>Name</label>
+        <input type="text" required>
+        <label>Email</label>
+        <input type="email" required>
+        <label>Password</label>
+        <input type="password" required>
+        <button class="btn">Sign Up</button>
+      </form>
+    </section>
+  </main>
+  <div class="sticky-shipping">
+    📦 FREE STANDARD SHIPPING ON U.S. ORDERS $50+ | FREE EXPRESS SHIPPING ON U.S. ORDERS $100+
+  </div>
+</body>
+</html>
