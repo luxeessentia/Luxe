@@ -3,52 +3,81 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Luxe Essentials – Contact</title>
-  <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
+  <title>Luxe Essentials - Contact</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="mobile-header">
-    <button class="menu-toggle">&#9776;</button>
-    <h1 class="mobile-logo">LUXE ESSENTIALS</h1>
-    <div class="cart-icon">🛒<span id="cart-count" class="cart-count">0</span></div>
-  </header>
-  <nav class="sidebar">
-    <div class="logo">LUXE ESSENTIALS</div>
+  <aside class="sidebar">
+    <div class="logo">Luxe Essentials</div>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="shop.html">Shop</a></li>
       <li><a href="login.html">Login/Register</a></li>
-      <li><a href="returns.html">Returns</a></li>
-      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="orders-returns.html">Orders & Returns</a></li>
       <li><a href="contact.html" class="active">Contact</a></li>
       <li><a href="about.html">About</a></li>
+      <li><a href="faq.html">FAQ</a></li>
     </ul>
-  </nav>
+  </aside>
+
+  <header class="mobile-header">
+    <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+    <div class="mobile-logo">Luxe Essentials</div>
+  </header>
+
   <main class="content">
-    <h2>Contact Us</h2>
-    <form>
-      <label>Name</label>
-      <input type="text" required>
-      <label>Email (required)</label>
-      <input type="email" required>
-      <label>Subject</label>
-      <select>
-        <option>General Inquiry</option>
-        <option>Order Issue</option>
-        <option>Returns & Refunds</option>
-        <option>Shipping & Delivery</option>
-        <option>Custom Bag Requests</option>
-        <option>Business/Collaboration</option>
-      </select>
-      <label>Message</label>
-      <textarea rows="5" required></textarea>
-      <label><input type="checkbox"> Subscribe to newsletter</label>
-      <button class="btn">Send Message</button>
+    <h1>Contact Us</h1>
+    <form id="contact-form" action="#" method="POST">
+      <label for="name">Name</label><br />
+      <input type="text" id="name" name="name" /><br /><br />
+
+      <label for="email">Email <span style="color: red">*</span></label><br />
+      <input type="email" id="email" name="email" required /><br /><br />
+
+      <label for="inquiry">Inquiry Type</label><br />
+      <select id="inquiry" name="inquiry">
+        <option value="general">General Inquiry</option>
+        <option value="order-issue">Order Issue</option>
+        <option value="returns-refunds">Returns & Refunds</option>
+        <option value="shipping">Shipping & Delivery</option>
+        <option value="custom-requests">Custom Bag Requests</option>
+        <option value="business">Business/Collaboration</option>
+      </select><br /><br />
+
+      <label for="message">Message</label><br />
+      <textarea id="message" name="message" rows="5"></textarea><br /><br />
+
+      <label><input type="checkbox" name="newsletter" /> Sign up for our newsletter</label><br /><br />
+
+      <button type="submit" class="btn">Send Message</button>
     </form>
+
+    <section class="social">
+      <h2>Follow Us</h2>
+      <ul>
+        <li><a href="https://www.instagram.com/luxeessentials" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+        <li><a href="https://www.tiktok.com/@luxeessentials" target="_blank" rel="noopener noreferrer">TikTok</a></li>
+        <li><a href="https://www.threads.net/@luxeessentials" target="_blank" rel="noopener noreferrer">Threads</a></li>
+      </ul>
+    </section>
   </main>
+
   <div class="sticky-shipping">
     📦 FREE STANDARD SHIPPING ON U.S. ORDERS $50+ | FREE EXPRESS SHIPPING ON U.S. ORDERS $100+
   </div>
+
+  <script>
+    // Mobile menu toggle script (if needed)
+    document.querySelector('.menu-toggle').addEventListener('click', () => {
+      document.querySelector('.sidebar').classList.toggle('active');
+    });
+
+    // Placeholder form submit handler
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you for contacting Luxe Essentials! We will get back to you soon.');
+      this.reset();
+    });
+  </script>
 </body>
 </html>
