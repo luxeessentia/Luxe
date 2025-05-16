@@ -1,0 +1,48 @@
+/* Reset & Base */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'DM Sans', sans-serif; display: flex; min-height: 100vh; background: #fff; color: #222; }
+
+/* Sidebar */
+.sidebar {
+  width: 220px; background: #f9f9f9; padding: 20px; position: fixed; height: 100vh; overflow-y: auto;
+}
+.logo { font-weight: 700; font-size: 1.5rem; margin-bottom: 2rem; text-transform: uppercase; color: #333; }
+.sidebar ul { list-style: none; }
+.sidebar li { margin-bottom: 1rem; }
+.sidebar a { text-decoration: none; color: #333; font-weight: 600; text-transform: uppercase; }
+.sidebar a.active, .sidebar a:hover { color: #a77d5a; }
+
+/* Mobile Header */
+.mobile-header {
+  display: none; position: fixed; top: 0; width: 100%; background: #f9f9f9; padding: 1rem; align-items: center; justify-content: space-between; z-index: 1000;
+}
+.menu-toggle { font-size: 1.5rem; background: none; border: none; cursor: pointer; }
+.mobile-logo { font-weight: 700; font-size: 1.2rem; color: #333; }
+.cart-icon { position: relative; font-size: 1.5rem; }
+.cart-count { position: absolute; top: -5px; right: -10px; background: #e63946; color: #fff; border-radius: 50%; padding: 2px 6px; font-size: 0.8rem; }
+
+/* Content */
+.content { margin-left: 240px; padding: 2rem; flex: 1; }
+.hero { background: #ffeedd; padding: 2rem; text-align: center; margin-bottom: 2rem; }
+.btn { background: #a77d5a; color: #fff; padding: 0.75rem 1.5rem; border: none; cursor: pointer; text-transform: uppercase; font-weight: 700; border-radius: 3rem; }
+.category-section h3 { margin-top: 2rem; margin-bottom: 1rem; text-transform: uppercase; }
+.product-grid { display: flex; gap: 1rem; flex-wrap: wrap; }
+.product-grid img { width: 150px; height: 150px; object-fit: cover; border-radius: 6px; }
+
+/* Forms & Lists */
+input, select, textarea { width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px; margin-top: 0.5rem; }
+form label { font-weight: 600; margin-top: 1rem; display: block; }
+.btn { margin-top: 1rem; }
+
+/* Sticky Shipping */
+.sticky-shipping {
+  position: fixed; bottom: 0; left: 0; width: 100%; background: #a77d5a; color: #fff; text-align: center; padding: 1rem; font-weight: 700; z-index: 1000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sidebar { display: none; }
+  .mobile-header { display: flex; }
+  .content { margin-left: 0; padding-top: 5rem; }
+  .sticky-shipping { font-size: 0.9rem; }
+}
