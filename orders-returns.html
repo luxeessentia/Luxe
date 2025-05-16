@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Luxe Essentials - Orders & Returns</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="logo">Luxe Essentials</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="login.html">Login/Register</a></li>
+      <li><a href="orders-returns.html" class="active">Orders & Returns</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+    </ul>
+  </aside>
+
+  <header class="mobile-header">
+    <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+    <div class="mobile-logo">Luxe Essentials</div>
+  </header>
+
+  <main class="content">
+    <h1>Orders & Returns</h1>
+
+    <section>
+      <h2>Track Your Order</h2>
+      <form id="track-order-form" action="#" method="POST">
+        <label for="order-number">Order Number:</label><br />
+        <input type="text" id="order-number" name="order-number" required /><br /><br />
+        <label for="email">Email:</label><br />
+        <input type="email" id="email" name="email" required /><br /><br />
+        <button type="submit">Track Order</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Start a Return</h2>
+      <form id="return-form" action="#" method="POST">
+        <label for="return-order-number">Order Number:</label><br />
+        <input type="text" id="return-order-number" name="return-order-number" required /><br /><br />
+        <label for="return-email">Email:</label><br />
+        <input type="email" id="return-email" name="return-email" required /><br /><br />
+        <label for="reason">Reason for Return:</label><br />
+        <textarea id="reason" name="reason" rows="4" required></textarea><br /><br />
+        <button type="submit">Submit Return Request</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Order History</h2>
+      <p>To view your order history, please log in to your account.</p>
+      <a href="login.html" class="btn">Login</a>
+    </section>
+  </main>
+
+  <div class="sticky-shipping">
+    📦 FREE STANDARD SHIPPING ON U.S. ORDERS $50+ | FREE EXPRESS SHIPPING ON U.S. ORDERS $100+
+  </div>
+</body>
+</html>
