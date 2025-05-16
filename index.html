@@ -2,69 +2,82 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Luxe Essentials</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Luxe Essentials - Home</title>
+  <link rel="stylesheet" href="styles.css" />
   <script defer src="script.js"></script>
 </head>
 <body>
-
-  <!-- Mobile Header -->
-  <header class="mobile-header">
-    <button class="menu-toggle">&#9776;</button>
-    <h1 class="mobile-logo">LUXE ESSENTIALS</h1>
-  </header>
-
-  <!-- Sidebar -->
-  <nav class="sidebar">
-    <div class="logo">LUXE ESSENTIALS</div>
+  <aside class="sidebar">
+    <div class="logo">Luxe Essentials</div>
     <ul>
       <li><a href="index.html" class="active">Home</a></li>
       <li><a href="shop.html">Shop</a></li>
       <li><a href="login.html">Login/Register</a></li>
-      <li><a href="returns.html">Returns</a></li>
-      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="orders-returns.html">Orders & Returns</a></li>
       <li><a href="contact.html">Contact</a></li>
       <li><a href="about.html">About</a></li>
+      <li><a href="faq.html">FAQ</a></li>
     </ul>
-  </nav>
+  </aside>
 
-  <!-- Cart Icon -->
-  <div class="cart-icon">
-    🛒<span class="cart-count">2</span>
-  </div>
+  <header class="mobile-header">
+    <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+    <div class="mobile-logo">Luxe Essentials</div>
+    <button class="cart-toggle" aria-label="Toggle cart">&#128722;</button>
+  </header>
 
-  <!-- Main Content -->
   <main class="content">
-    <!-- Hero Slider -->
-    <section class="hero-slider">
-      <div class="slider-text">
-        <div class="slide active">💸 Get $5 OFF your first order when you sign up!</div>
-        <div class="slide">👜 Handmade Bags & Purses</div>
-        <div class="slide">🔌 Tech Accessories</div>
-        <div class="slide">💆‍♀️ Wellness Essentials</div>
-        <div class="slide">📱 Trendy Phone Cases</div>
+    <section class="hero">
+      <div class="slider">
+        <div class="slide active">
+          <h2>GET $5 OFF YOUR FIRST ORDER WHEN YOU SIGN UP!</h2>
+          <a href="login.html" class="btn">Sign Up</a>
+        </div>
+        <div class="slide">Handmade Bags &amp; Purses</div>
+        <div class="slide">Tech Accessories</div>
+        <div class="slide">Trendy Phone Cases</div>
       </div>
-      <a href="login.html" class="btn hero-btn">Sign Up</a>
     </section>
 
-    <!-- Featured Categories -->
     <section class="category-section">
       <h3>Featured Products</h3>
       <div class="product-grid">
-        <img src="images/bag1.jpg" alt="Handmade Bag">
-        <img src="images/tech1.jpg" alt="Tech Product">
-        <img src="images/wellness1.jpg" alt="Wellness Product">
-        <img src="images/phone1.jpg" alt="Phone Case">
+        <div class="product">
+          <img src="images/bag1.jpg" alt="Handmade Bag 1" />
+          <p>Elegant Handmade Bag</p>
+        </div>
+        <div class="product">
+          <img src="images/tech1.jpg" alt="Tech Accessory 1" />
+          <p>Wireless Earbuds</p>
+        </div>
+        <div class="product">
+          <img src="images/phonecase1.jpg" alt="Phone Case 1" />
+          <p>Trendy Phone Case</p>
+        </div>
       </div>
     </section>
   </main>
 
-  <!-- Sticky Shipping Promo -->
   <div class="sticky-shipping">
     📦 FREE STANDARD SHIPPING ON U.S. ORDERS $50+ | FREE EXPRESS SHIPPING ON U.S. ORDERS $100+
   </div>
 
+  <script>
+    // Slider script
+    let slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+    }
+
+    setInterval(() => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }, 3000);
+  </script>
 </body>
 </html>
