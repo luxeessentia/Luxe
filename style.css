@@ -1,4 +1,4 @@
-/* style-charcoal.css */
+/* style-sage.css */
 
 body {
   font-family: 'DM Sans', sans-serif;
@@ -12,8 +12,8 @@ body {
   position: fixed;
   width: 220px;
   height: 100vh;
-  background-color: #4A4A4A; /* Charcoal Gray */
-  color: #eee;
+  background-color: #8A9A5B; /* Muted Sage Green */
+  color: #fff;
   padding: 2rem 1rem;
 }
 
@@ -21,7 +21,7 @@ body {
   font-weight: 700;
   font-size: 1.5rem;
   margin-bottom: 2rem;
-  color: #eee;
+  color: #fff;
 }
 
 .sidebar ul {
@@ -36,7 +36,7 @@ body {
 
 .sidebar ul li a {
   text-decoration: none;
-  color: #eee;
+  color: #fff;
   font-weight: 500;
   display: block;
   padding: 0.5rem 0;
@@ -44,7 +44,7 @@ body {
 
 .sidebar ul li a:hover,
 .sidebar ul li a.active {
-  color: #c0a0a0; /* Light rose/gold accent */
+  color: #d3d9b1; /* Light sage */
 }
 
 .content {
@@ -53,8 +53,8 @@ body {
 }
 
 .btn {
-  background-color: #c0a0a0;
-  color: #4A4A4A;
+  background-color: #d3d9b1;
+  color: #8A9A5B;
   padding: 0.6rem 1.2rem;
   border: none;
   cursor: pointer;
@@ -63,7 +63,7 @@ body {
 }
 
 .btn:hover {
-  background-color: #a08080;
+  background-color: #b9c088;
 }
 
 .mobile-header {
@@ -88,7 +88,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    background: #4A4A4A;
-    color: #eee;
+    background: #8A9A5B;
+    color: #fff;
   }
 }
