@@ -1,32 +1,44 @@
-// Mobile menu toggle
-document.querySelector('.menu-toggle').addEventListener('click', () => {
-  document.querySelector('.sidebar').classList.toggle('active');
+// Cart sidebar toggle
+const cartButton = document.getElementById('cart-button');
+const cartSidebar = document.getElementById('cart-sidebar');
+const closeCartBtn = document.getElementById('close-cart');
+
+cartButton.addEventListener('click', () => {
+  cartSidebar.classList.add('active');
 });
 
-// Cart functionality
-let cart = [];
-const cartCountEl = document.getElementById('cart-count');
+closeCartBtn.addEventListener('click', () => {
+  cartSidebar.classList.remove('active');
+});
 
-function addToCart(name, price) {
-  const item = cart.find(i => i.name === name);
-  if (item) {
-    item.qty++;
-  } else {
-    cart.push({ name, price, qty: 1 });
+// Hero sliding text logic
+const slides = [
+  "GET $5 OFF YOUR FIRST ORDER WHEN YOU SIGN UP!",
+  "Handmade Bags & Purses",
+  "Tech Accessories",
+  "Trendy Phone Cases"
+];
+
+let slideIndex = 0;
+const sliderText = document.querySelector('.slider-text');
+
+function showSlide(index) {
+  sliderText.style.opacity = 0;
+  setTimeout(() => {
+    sliderText.textContent = slides[index];
+    sliderText.style.opacity = 1;
+  }, 500);
+}
+
+function nextSlide() {
+  slideIndex++;
+  if (slideIndex >= slides.length) {
+    slideIndex = 0;
   }
-  updateCartCount();
+  showSlide(slideIndex);
 }
 
-function updateCartCount() {
-  const totalQty = cart.reduce((sum, i) => sum + i.qty, 0);
-  cartCountEl.textContent = totalQty;
-}
+setInterval(nextSlide, 3000); // slide every 3 seconds
 
-// Bind all buttons
-document.querySelectorAll('.add-to-cart').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const name = btn.previousElementSibling?.alt || 'Item';
-    const price = parseFloat(btn.getAttribute('data-price') || '0');
-    addToCart(name, price);
-  });
-});
+// Initialize first slide on page load
+showSlide(slideIndex);
