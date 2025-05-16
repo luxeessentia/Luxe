@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Luxe Essentials – Shop</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+
+  <header class="mobile-header">
+    <button class="menu-toggle">&#9776;</button>
+    <h1 class="mobile-logo">LUXE ESSENTIALS</h1>
+    <div class="cart-icon">
+      🛒<span id="cart-count" class="cart-count">0</span>
+    </div>
+  </header>
+
+  <nav class="sidebar">
+    <div class="logo">LUXE ESSENTIALS</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html" class="active">Shop</a></li>
+      <li><a href="login.html">Login/Register</a></li>
+      <li><a href="returns.html">Returns</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <main class="content">
+    <h2>SHOP BY CATEGORY</h2>
+
+    <section id="handmade-bags">
+      <h3>HANDMADE BAGS</h3>
+      <div class="product-grid">
+        <div class="product">
+          <img src="images/handmade-bag-1.jpg" alt="Handmade Bag 1">
+          <button class="add-to-cart" onclick="addToCart('Handmade Bag 1', 60)">+ Add to Cart</button>
+        </div>
+        <div class="product">
+          <img src="images/handmade-bag-2.jpg" alt="Handmade Bag 2">
+          <button class="add-to-cart" onclick="addToCart('Handmade Bag 2', 65)">+ Add to Cart</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="tech">
+      <h3>TECH</h3>
+      <div class="product-grid">
+        <div class="product">
+          <img src="images/tech-1.jpg" alt="Tech Product 1">
+          <button class="add-to-cart" onclick="addToCart('Tech Gadget 1', 120)">+ Add to Cart</button>
+        </div>
+        <div class="product">
+          <img src="images/tech-2.jpg" alt="Tech Product 2">
+          <button class="add-to-cart" onclick="addToCart('Tech Gadget 2', 80)">+ Add to Cart</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="wellness">
+      <h3>WELLNESS</h3>
+      <div class="product-grid">
+        <div class="product">
+          <img src="images/wellness-1.jpg" alt="Wellness Product 1">
+          <button class="add-to-cart" onclick="addToCart('Wellness Set 1', 45)">+ Add to Cart</button>
+        </div>
+        <div class="product">
+          <img src="images/wellness-2.jpg" alt="Wellness Product 2">
+          <button class="add-to-cart" onclick="addToCart('Wellness Set 2', 55)">+ Add to Cart</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="phone-cases">
+      <h3>PHONE CASES</h3>
+      <div class="product-grid">
+        <div class="product">
+          <img src="images/phone-case-1.jpg" alt="Phone Case 1">
+          <button class="add-to-cart" onclick="addToCart('Phone Case 1', 25)">+ Add to Cart</button>
+        </div>
+        <div class="product">
+          <img src="images/phone-case-2.jpg" alt="Phone Case 2">
+          <button class="add-to-cart" onclick="addToCart('Phone Case 2', 30)">+ Add to Cart</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="sticky-shipping">
+    📦 FREE STANDARD SHIPPING ON U.S. ORDERS $50+ | FREE EXPRESS SHIPPING ON U.S. ORDERS $100+
+  </div>
+
+</body>
+</html>
