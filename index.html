@@ -3,12 +3,183 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Luxe Essentials - Home</title>
-  <link rel="stylesheet" href="styles.css" />
-  <script defer src="script.js"></script>
+  <title>Luxe Essentials</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      display: flex;
+      min-height: 100vh;
+      background: #fff;
+    }
+    /* Sidebar */
+    .sidebar {
+      background: #f8f8f8;
+      padding: 20px;
+      width: 240px;
+      min-height: 100vh;
+      position: fixed;
+      left: 0;
+      top: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      border-right: 1px solid #ddd;
+    }
+    .sidebar .logo {
+      font-weight: bold;
+      font-size: 18px;
+      text-transform: uppercase;
+      color: #222;
+      margin-bottom: 10px;
+    }
+    .sidebar ul {
+      list-style: none;
+    }
+    .sidebar ul li a {
+      display: block;
+      padding: 10px 0;
+      color: #222;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .sidebar ul li a:hover,
+    .sidebar ul li a.active {
+      color: #cc3366;
+    }
+    /* Mobile Header */
+    .mobile-header {
+      display: none;
+      background: #fff;
+      padding: 10px 20px;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #eee;
+      position: fixed;
+      top: 0;
+      z-index: 999;
+    }
+    .mobile-header .menu-toggle {
+      background: none;
+      border: none;
+      font-size: 28px;
+      cursor: pointer;
+    }
+    .mobile-header .mobile-logo {
+      font-weight: bold;
+      font-size: 16px;
+    }
+    /* Main content */
+    .content {
+      margin-left: 260px;
+      padding: 40px;
+      flex: 1;
+    }
+    /* Hero slider */
+    .hero {
+      background: #fce4ec;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 40px;
+      text-align: center;
+      height: 120px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .slider {
+      width: 100%;
+      max-width: 600px;
+      position: relative;
+    }
+    .slide {
+      display: none;
+      animation: fadeIn 0.5s ease-in;
+    }
+    .slide.active {
+      display: block;
+    }
+    .slide h2 {
+      font-size: 20px;
+      color: #cc3366;
+      margin-bottom: 10px;
+    }
+    .slide .btn {
+      background: #cc3366;
+      color: white;
+      padding: 8px 16px;
+      text-decoration: none;
+      border-radius: 4px;
+      margin-top: 10px;
+      display: inline-block;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    /* Category Section */
+    .category-section h3 {
+      margin-top: 40px;
+      font-size: 20px;
+      color: #333;
+    }
+    .product-grid {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin: 10px 0 30px;
+    }
+    .product-grid img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+    /* Sticky bar */
+    .sticky-shipping {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #cc3366;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
+      z-index: 999;
+    }
+    /* Mobile Styles */
+    @media screen and (max-width: 768px) {
+      .sidebar {
+        display: none;
+      }
+      .mobile-header {
+        display: flex;
+      }
+      .content {
+        margin-left: 0;
+        margin-top: 60px;
+        padding: 20px;
+      }
+      .product-grid {
+        justify-content: center;
+      }
+    }
+  </style>
 </head>
 <body>
-  <aside class="sidebar">
+  <nav class="sidebar">
     <div class="logo">Luxe Essentials</div>
     <ul>
       <li><a href="index.html" class="active">Home</a></li>
@@ -19,12 +190,11 @@
       <li><a href="about.html">About</a></li>
       <li><a href="faq.html">FAQ</a></li>
     </ul>
-  </aside>
+  </nav>
 
   <header class="mobile-header">
-    <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+    <button class="menu-toggle">&#9776;</button>
     <div class="mobile-logo">Luxe Essentials</div>
-    <button class="cart-toggle" aria-label="Toggle cart">&#128722;</button>
   </header>
 
   <main class="content">
@@ -32,29 +202,27 @@
       <div class="slider">
         <div class="slide active">
           <h2>GET $5 OFF YOUR FIRST ORDER WHEN YOU SIGN UP!</h2>
-          <a href="login.html" class="btn">Sign Up</a>
+          <a href="signup.html" class="btn">Sign Up</a>
         </div>
-        <div class="slide">Handmade Bags &amp; Purses</div>
-        <div class="slide">Tech Accessories</div>
-        <div class="slide">Trendy Phone Cases</div>
+        <div class="slide">
+          <h2>Handmade Bags & Purses</h2>
+        </div>
+        <div class="slide">
+          <h2>Tech Accessories</h2>
+        </div>
+        <div class="slide">
+          <h2>Trendy Phone Cases</h2>
+        </div>
       </div>
     </section>
 
     <section class="category-section">
       <h3>Featured Products</h3>
       <div class="product-grid">
-        <div class="product">
-          <img src="images/bag1.jpg" alt="Handmade Bag 1" />
-          <p>Elegant Handmade Bag</p>
-        </div>
-        <div class="product">
-          <img src="images/tech1.jpg" alt="Tech Accessory 1" />
-          <p>Wireless Earbuds</p>
-        </div>
-        <div class="product">
-          <img src="images/phonecase1.jpg" alt="Phone Case 1" />
-          <p>Trendy Phone Case</p>
-        </div>
+        <!-- Example products -->
+        <img src="images/bag1.jpg" alt="Handmade Bag" />
+        <img src="images/tech1.jpg" alt="Tech Accessory" />
+        <img src="images/phonecase1.jpg" alt="Phone Case" />
       </div>
     </section>
   </main>
@@ -64,9 +232,8 @@
   </div>
 
   <script>
-    // Slider script
-    let slides = document.querySelectorAll('.slide');
-    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    let currentIndex = 0;
 
     function showSlide(index) {
       slides.forEach((slide, i) => {
@@ -74,10 +241,26 @@
       });
     }
 
-    setInterval(() => {
-      currentSlide = (currentSlide + 1) % slides.length;
-      showSlide(currentSlide);
-    }, 3000);
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % slides.length;
+      showSlide(currentIndex);
+    }
+
+    showSlide(currentIndex);
+    setInterval(nextSlide, 3000);
+
+    // Optional: mobile menu toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const sidebar = document.querySelector('.sidebar');
+
+    menuToggle.addEventListener('click', () => {
+      if (sidebar.style.display === 'flex') {
+        sidebar.style.display = 'none';
+      } else {
+        sidebar.style.display = 'flex';
+        sidebar.style.flexDirection = 'column';
+      }
+    });
   </script>
 </body>
 </html>
