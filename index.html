@@ -2,265 +2,109 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Luxe Essentials</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="cart.css" />
+  <script defer src="script.js"></script>
+  <script defer src="cart.js"></script>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'DM Sans', sans-serif;
-      display: flex;
-      min-height: 100vh;
-      background: #fff;
-    }
-    /* Sidebar */
-    .sidebar {
-      background: #f8f8f8;
-      padding: 20px;
-      width: 240px;
-      min-height: 100vh;
-      position: fixed;
-      left: 0;
-      top: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      border-right: 1px solid #ddd;
-    }
-    .sidebar .logo {
-      font-weight: bold;
-      font-size: 18px;
-      text-transform: uppercase;
-      color: #222;
-      margin-bottom: 10px;
-    }
-    .sidebar ul {
-      list-style: none;
-    }
-    .sidebar ul li a {
-      display: block;
-      padding: 10px 0;
-      color: #222;
-      text-decoration: none;
-      cursor: pointer;
-    }
-    .sidebar ul li a:hover,
-    .sidebar ul li a.active {
-      color: #cc3366;
-    }
-    /* Mobile Header */
-    .mobile-header {
-      display: none;
-      background: #fff;
-      padding: 10px 20px;
-      width: 100%;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #eee;
-      position: fixed;
-      top: 0;
-      z-index: 999;
-    }
-    .mobile-header .menu-toggle {
-      background: none;
-      border: none;
-      font-size: 28px;
-      cursor: pointer;
-    }
-    .mobile-header .mobile-logo {
-      font-weight: bold;
-      font-size: 16px;
-    }
-    /* Main content */
-    .content {
-      margin-left: 260px;
-      padding: 40px;
-      flex: 1;
-    }
-    /* Hero slider */
-    .hero {
-      background: #fce4ec;
-      padding: 20px;
-      border-radius: 8px;
-      margin-bottom: 40px;
-      text-align: center;
-      height: 120px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
+    .hero-text-slide {
+      height: 50px;
       overflow: hidden;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .slider {
-      width: 100%;
-      max-width: 600px;
       position: relative;
     }
-    .slide {
-      display: none;
-      animation: fadeIn 0.5s ease-in;
+
+    .hero-text-slide div {
+      animation: slideText 8s infinite;
     }
-    .slide.active {
-      display: block;
+
+    @keyframes slideText {
+      0%   { transform: translateY(0%); }
+      25%  { transform: translateY(-100%); }
+      50%  { transform: translateY(-200%); }
+      75%  { transform: translateY(-300%); }
+      100% { transform: translateY(0%); }
     }
-    .slide h2 {
-      font-size: 20px;
+
+    .hero-text-slide p {
+      margin: 0;
+      font-size: 22px;
       color: #cc3366;
-      margin-bottom: 10px;
-    }
-    .slide .btn {
-      background: #cc3366;
-      color: white;
-      padding: 8px 16px;
-      text-decoration: none;
-      border-radius: 4px;
-      margin-top: 10px;
-      display: inline-block;
-    }
-    @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
-    }
-    /* Category Section */
-    .category-section h3 {
-      margin-top: 40px;
-      font-size: 20px;
-      color: #333;
-    }
-    .product-grid {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin: 10px 0 30px;
-    }
-    .product-grid img {
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 6px;
-    }
-    /* Sticky bar */
-    .sticky-shipping {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: #cc3366;
-      color: white;
-      text-align: center;
-      padding: 10px;
-      font-size: 14px;
-      z-index: 999;
-    }
-    /* Mobile Styles */
-    @media screen and (max-width: 768px) {
-      .sidebar {
-        display: none;
-      }
-      .mobile-header {
-        display: flex;
-      }
-      .content {
-        margin-left: 0;
-        margin-top: 60px;
-        padding: 20px;
-      }
-      .product-grid {
-        justify-content: center;
-      }
+      line-height: 50px;
     }
   </style>
 </head>
 <body>
-  <nav class="sidebar">
+
+  <!-- Sidebar -->
+  <div class="sidebar">
     <div class="logo">Luxe Essentials</div>
     <ul>
       <li><a href="index.html" class="active">Home</a></li>
       <li><a href="shop.html">Shop</a></li>
       <li><a href="login.html">Login/Register</a></li>
-      <li><a href="orders-returns.html">Orders & Returns</a></li>
+      <li><a href="orders.html">Orders & Returns</a></li>
       <li><a href="contact.html">Contact</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="faq.html">FAQ</a></li>
     </ul>
-  </nav>
+  </div>
 
-  <header class="mobile-header">
+  <!-- Mobile Header -->
+  <div class="mobile-header">
     <button class="menu-toggle">&#9776;</button>
     <div class="mobile-logo">Luxe Essentials</div>
-  </header>
+    <div class="cart-icon" onclick="toggleCart()">🛒</div>
+  </div>
 
-  <main class="content">
-    <section class="hero">
-      <div class="slider">
-        <div class="slide active">
-          <h2>GET $5 OFF YOUR FIRST ORDER WHEN YOU SIGN UP!</h2>
-          <a href="login.html" class="btn">Sign Up</a>
-        </div>
-        <div class="slide">
-          <h2>Handmade Bags & Purses</h2>
-        </div>
-        <div class="slide">
-          <h2>Tech Accessories</h2>
-        </div>
-        <div class="slide">
-          <h2>Trendy Phone Cases</h2>
+  <!-- Cart Side Panel -->
+  <div id="cart-panel" class="cart-panel">
+    <h3>Your Cart</h3>
+    <div id="cart-items"></div>
+    <a href="checkout.html" class="btn checkout-btn">Checkout</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+
+    <!-- Hero Section -->
+    <div class="hero">
+      <div class="hero-text-slide">
+        <div>
+          <p>GET $5 OFF YOUR FIRST ORDER WHEN YOU SIGN UP!</p>
+          <p>Handmade Bags & Purses</p>
+          <p>Tech Accessories</p>
+          <p>Trendy Phone Cases</p>
         </div>
       </div>
-    </section>
+      <a href="signup.html" class="btn">Sign Up</a>
+    </div>
 
-    <section class="category-section">
-      <h3>Featured Products</h3>
+    <!-- Categories Section -->
+    <div class="category-section">
+      <h3>Featured Categories</h3>
       <div class="product-grid">
-        <!-- Example products -->
-        <img src="images/bag1.jpg" alt="Handmade Bag" />
-        <img src="images/tech1.jpg" alt="Tech Accessory" />
-        <img src="images/phonecase1.jpg" alt="Phone Case" />
+        <div>
+          <img src="images/bag1.jpg" alt="Handmade Bag" />
+          <p>Handmade Bag</p>
+        </div>
+        <div>
+          <img src="images/tech1.jpg" alt="Tech Accessory" />
+          <p>Tech Accessory</p>
+        </div>
+        <div>
+          <img src="images/case1.jpg" alt="Phone Case" />
+          <p>Phone Case</p>
+        </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </div>
 
+  <!-- Sticky Shipping Bar -->
   <div class="sticky-shipping">
     📦 FREE STANDARD SHIPPING ON U.S. ORDERS $50+ | FREE EXPRESS SHIPPING ON U.S. ORDERS $100+
   </div>
 
-  <script>
-    const slides = document.querySelectorAll('.slide');
-    let currentIndex = 0;
-
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === index);
-      });
-    }
-
-    function nextSlide() {
-      currentIndex = (currentIndex + 1) % slides.length;
-      showSlide(currentIndex);
-    }
-
-    showSlide(currentIndex);
-    setInterval(nextSlide, 3000);
-
-    // Optional: mobile menu toggle
-    const menuToggle = document.querySelector('.menu-toggle');
-    const sidebar = document.querySelector('.sidebar');
-
-    menuToggle.addEventListener('click', () => {
-      if (sidebar.style.display === 'flex') {
-        sidebar.style.display = 'none';
-      } else {
-        sidebar.style.display = 'flex';
-        sidebar.style.flexDirection = 'column';
-      }
-    });
-  </script>
 </body>
 </html>
