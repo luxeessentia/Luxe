@@ -6,40 +6,15 @@
   <title>Luxe Essentials</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="cart.css" />
-  <script defer src="script.js"></script>
-  <script defer src="cart.js"></script>
-  <style>
-    .hero-text-slide {
-      height: 50px;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .hero-text-slide div {
-      animation: slideText 8s infinite;
-    }
-
-    @keyframes slideText {
-      0%   { transform: translateY(0%); }
-      25%  { transform: translateY(-100%); }
-      50%  { transform: translateY(-200%); }
-      75%  { transform: translateY(-300%); }
-      100% { transform: translateY(0%); }
-    }
-
-    .hero-text-slide p {
-      margin: 0;
-      font-size: 22px;
-      color: #cc3366;
-      line-height: 50px;
-    }
-  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+  <script src="script.js" defer></script>
 </head>
 <body>
 
   <!-- Sidebar -->
   <div class="sidebar">
-    <div class="logo">Luxe Essentials</div>
+    <div class="logo">Luxe</div>
     <ul>
       <li><a href="index.html" class="active">Home</a></li>
       <li><a href="shop.html">Shop</a></li>
@@ -54,57 +29,77 @@
   <!-- Mobile Header -->
   <div class="mobile-header">
     <button class="menu-toggle">&#9776;</button>
-    <div class="mobile-logo">Luxe Essentials</div>
+    <div class="mobile-logo">Luxe</div>
     <div class="cart-icon" onclick="toggleCart()">🛒</div>
   </div>
 
-  <!-- Cart Side Panel -->
-  <div id="cart-panel" class="cart-panel">
-    <h3>Your Cart</h3>
-    <div id="cart-items"></div>
+  <!-- Cart Panel -->
+  <div id="cartPanel" class="cart-panel">
+    <h2>Your Cart</h2>
+    <div class="cart-items">
+      <p>No items yet.</p>
+    </div>
     <a href="checkout.html" class="btn checkout-btn">Checkout</a>
   </div>
 
   <!-- Main Content -->
   <div class="content">
-
-    <!-- Hero Section -->
+    <!-- Hero Section with Swiper -->
     <div class="hero">
-      <div class="hero-text-slide">
-        <div>
-          <p>GET $5 OFF YOUR FIRST ORDER WHEN YOU SIGN UP!</p>
-          <p>Handmade Bags & Purses</p>
-          <p>Tech Accessories</p>
-          <p>Trendy Phone Cases</p>
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <!-- Slide 1 -->
+          <div class="swiper-slide">
+            <h2>GET $5 OFF YOUR FIRST ORDER WHEN YOU SIGN UP!</h2>
+            <a href="#" class="btn">Sign Up</a>
+          </div>
+          <!-- Slide 2 -->
+          <div class="swiper-slide">
+            <h2>Handmade Bags & Purses</h2>
+          </div>
+          <!-- Slide 3 -->
+          <div class="swiper-slide">
+            <h2>Tech Accessories</h2>
+          </div>
+          <!-- Slide 4 -->
+          <div class="swiper-slide">
+            <h2>Trendy Phone Cases</h2>
+          </div>
         </div>
       </div>
-      <a href="signup.html" class="btn">Sign Up</a>
     </div>
 
-    <!-- Categories Section -->
-    <div class="category-section">
-      <h3>Featured Categories</h3>
+    <!-- Featured Products -->
+    <section class="category-section">
+      <h3>Featured Products</h3>
       <div class="product-grid">
-        <div>
-          <img src="images/bag1.jpg" alt="Handmade Bag" />
-          <p>Handmade Bag</p>
-        </div>
-        <div>
-          <img src="images/tech1.jpg" alt="Tech Accessory" />
-          <p>Tech Accessory</p>
-        </div>
-        <div>
-          <img src="images/case1.jpg" alt="Phone Case" />
-          <p>Phone Case</p>
-        </div>
+        <img src="https://via.placeholder.com/150x150?text=Orange+Plush+Bag" alt="Bag">
+        <img src="https://via.placeholder.com/150x150?text=Wireless+Earbuds" alt="Tech">
+        <img src="https://via.placeholder.com/150x150?text=Phone+Case" alt="Phone Case">
       </div>
-    </div>
+    </section>
   </div>
 
-  <!-- Sticky Shipping Bar -->
+  <!-- Sticky Shipping Promo -->
   <div class="sticky-shipping">
     📦 FREE STANDARD SHIPPING ON U.S. ORDERS $50+ | FREE EXPRESS SHIPPING ON U.S. ORDERS $100+
   </div>
+
+  <script>
+    // Swiper init
+    const swiper = new Swiper('.swiper', {
+      direction: 'horizontal',
+      loop: true,
+      autoplay: {
+        delay: 3000,
+      },
+    });
+
+    // Toggle cart panel
+    function toggleCart() {
+      document.getElementById("cartPanel").classList.toggle("open");
+    }
+  </script>
 
 </body>
 </html>
