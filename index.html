@@ -4,112 +4,82 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Luxe Essentials - Home</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="styles.css" />
   <script defer src="script.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
-  <!-- Thin Hero Banner at the very top -->
-  <div class="top-banner">
-    <p>✨ Luxe Essentials — Handmade Bags & Curated Finds</p>
+  <!-- Thin Hero Banner with Sliding Text -->
+  <div class="hero-banner">
+    <div class="scroll-text">
+      📦 GET $5 OFF YOUR FIRST ORDER WHEN YOU SIGN UP &nbsp;&nbsp;&nbsp; Handmade Bags &nbsp;&nbsp;&nbsp; Clothing &nbsp;&nbsp;&nbsp; Tech & Accessories &nbsp;&nbsp;&nbsp; Beauty/Makeup &nbsp;&nbsp;&nbsp; Jewelry & Accessories &nbsp;&nbsp;&nbsp; Footwear
+    </div>
   </div>
 
-  <!-- Logo Header -->
-  <header class="main-header" id="mainHeader">
+  <!-- Logo Section -->
+  <header class="logo-header" id="logoHeader">
     <img src="logo.png" alt="Luxe Essentials Logo" class="logo" />
   </header>
 
   <!-- Sidebar Navigation -->
-  <nav class="sidebar">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="#">Shop</a>
-        <ul class="submenu">
-          <li><a href="#">Handmade Bags</a></li>
-          <li><a href="#">Clothing</a></li>
-          <li><a href="#">Tech & Accessories</a>
-            <ul>
-              <li><a href="#">Phone Accessories</a></li>
-              <li><a href="#">Audio</a></li>
-              <li><a href="#">Wellness Devices</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Beauty/Makeup</a></li>
-          <li><a href="#">Jewelry & Accessories</a></li>
-          <li><a href="#">Footwear</a></li>
-        </ul>
-      </li>
-      <li><a href="login.html">Login / Register</a></li>
-      <li><a href="orders.html">Orders & Returns</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="faq.html">FAQ</a></li>
-    </ul>
-  </nav>
+  <aside class="sidebar">
+    <nav>
+      <ul>
+        <li>Handmade Bags</li>
+        <li>Clothing</li>
+        <li>Tech & Accessories
+          <ul class="sub-menu">
+            <li>Phone Accessories</li>
+            <li>Audio</li>
+            <li>Wellness Devices</li>
+          </ul>
+        </li>
+        <li>Beauty/Makeup</li>
+        <li>Jewelry & Accessories</li>
+        <li>Footwear</li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Right Side Cart Icon -->
+  <div class="cart-icon">
+    <i class="fas fa-shopping-cart"></i>
+  </div>
 
   <!-- Main Content -->
-  <main class="content">
-
-    <!-- Featured Section -->
-    <section class="featured">
-      <h2>Featured Bags</h2>
-      <div class="carousel" id="bags-carousel">
-        <!-- Placeholder images/products -->
-        <div class="item"><img src="bag1.jpg" alt="Bag 1"><p>Orange & White Plush Bag</p></div>
-        <div class="item"><img src="bag2.jpg" alt="Bag 2"><p>Mini Cream Tote</p></div>
-        <div class="item"><img src="bag3.jpg" alt="Bag 3"><p>Gold Handle Satchel</p></div>
-      </div>
+  <main class="main-content">
+    
+    <!-- Full-Width Banners -->
+    <section class="banners">
+      <img src="banner1.jpg" alt="Banner 1"/>
+      <img src="banner2.jpg" alt="Banner 2"/>
     </section>
 
-    <section class="featured">
-      <h2>Tech Accessories</h2>
-      <div class="carousel" id="tech-carousel">
-        <div class="item"><img src="tech1.jpg" alt="Tech 1"><p>Wireless Earbuds</p></div>
-        <div class="item"><img src="tech2.jpg" alt="Tech 2"><p>USB C Cable</p></div>
-        <div class="item"><img src="tech3.jpg" alt="Tech 3"><p>Phone Stand</p></div>
+    <!-- Featured Product Carousels -->
+    <section class="featured-section">
+      <h2>Handmade Bags</h2>
+      <div class="carousel">
+        <img src="bag1.jpg" alt="Bag 1">
+        <img src="bag2.jpg" alt="Bag 2">
+        <img src="bag3.jpg" alt="Bag 3">
       </div>
-    </section>
 
-    <section class="featured">
-      <h2>Phone Cases</h2>
-      <div class="carousel" id="case-carousel">
-        <div class="item"><img src="case1.jpg" alt="Case 1"><p>Marble Glossy Case</p></div>
-        <div class="item"><img src="case2.jpg" alt="Case 2"><p>Pink Glitter Case</p></div>
-        <div class="item"><img src="case3.jpg" alt="Case 3"><p>Clear Minimalist Case</p></div>
+      <h2>Tech & Accessories</h2>
+      <div class="carousel">
+        <img src="tech1.jpg" alt="Tech 1">
+        <img src="tech2.jpg" alt="Tech 2">
+        <img src="tech3.jpg" alt="Tech 3">
       </div>
-    </section>
 
-    <!-- Payment Section -->
-    <section class="payments">
-      <h3>Payment Methods</h3>
-      <ul class="payment-list">
-        <li>
-          <strong>Credit/Debit Card:</strong>
-          <img src="visa.png" alt="Visa">
-          <img src="mastercard.png" alt="Mastercard">
-          <img src="amex.png" alt="American Express">
-          <img src="discover.png" alt="Discover">
-        </li>
-        <li>
-          <strong>Buy Now Pay Later:</strong>
-          <img src="klarna.png" alt="Klarna">
-          <img src="affirm.png" alt="Affirm">
-          <img src="zip.png" alt="Zip">
-        </li>
-        <li><img src="applepay.png" alt="Apple Pay" class="pay-icon"></li>
-        <li><img src="cashapp.png" alt="Cash App Pay" class="pay-icon"></li>
-        <li><img src="googlepay.png" alt="Google Pay" class="pay-icon"></li>
-      </ul>
+      <h2>Beauty/Makeup</h2>
+      <div class="carousel">
+        <img src="beauty1.jpg" alt="Beauty 1">
+        <img src="beauty2.jpg" alt="Beauty 2">
+        <img src="beauty3.jpg" alt="Beauty 3">
+      </div>
     </section>
 
   </main>
-
-  <!-- Sticky Bottom Bar -->
-  <div class="sticky-bar">
-    📦 FREE STANDARD SHIPPING ON U.S. ORDERS $50+ | FREE EXPRESS SHIPPING ON U.S. ORDERS $100+
-  </div>
-
 </body>
 </html>
