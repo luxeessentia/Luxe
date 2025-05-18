@@ -1,72 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Luxe Essentials - FAQ</title>
-  <link rel="stylesheet" href="styles.css" />
-  <script defer src="script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs - Luxe Essentials</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Same head content as index.html -->
 </head>
 <body>
-  <aside class="sidebar">
-    <div class="logo">Luxe Essentials</div>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="shop.html">Shop</a></li>
-      <li><a href="login.html">Login/Register</a></li>
-      <li><a href="orders.html">Orders & Returns</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="faq.html" class="active">FAQ</a></li>
-    </ul>
-  </aside>
+    <!-- Reused Header/Navigation from index.html -->
 
-  <header class="mobile-header">
-    <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
-    <div class="mobile-logo">Luxe Essentials</div>
-    <button id="cart-button" aria-label="Open cart">&#128722;</button>
-  </header>
+    <main class="faq-content">
+        <h1>Frequently Asked Questions</h1>
+        
+        <div class="faq-container">
+            <div class="faq-section">
+                <h2>Shipping & Delivery</h2>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How long will shipping take?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Standard shipping within the U.S. takes 3-5 business days. Express shipping delivers in 1-2 business days. International shipping times vary by destination.</p>
+                    </div>
+                </div>
+                <!-- More FAQ items -->
+            </div>
 
-  <main class="content">
-    <h2>Frequently Asked Questions</h2>
+            <div class="faq-section">
+                <h2>Returns & Exchanges</h2>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What is your return policy?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We accept returns within 30 days of delivery. Items must be unused, in original condition with tags attached. Please contact us to initiate a return.</p>
+                    </div>
+                </div>
+                <!-- More FAQ items -->
+            </div>
 
-    <section class="faq-item">
-      <h3>What is your return policy?</h3>
-      <p>You can return items within 48 hours of purchase. Items must be unused and in original packaging.</p>
-    </section>
+            <div class="contact-promo">
+                <p>Still have questions? <a href="contact.html">Contact our team</a> and we'll be happy to help!</p>
+            </div>
+        </div>
+    </main>
 
-    <section class="faq-item">
-      <h3>How long does shipping take?</h3>
-      <p>We use USPS for shipping:<br>
-      - Standard Shipping: 3-5 business days<br>
-      - Express Shipping: 1-3 business days</p>
-    </section>
+    <!-- Reused Footer from index.html -->
 
-    <section class="faq-item">
-      <h3>Do you ship internationally?</h3>
-      <p>Currently, we only ship within the United States.</p>
-    </section>
-
-    <section class="faq-item">
-      <h3>How can I track my order?</h3>
-      <p>You can track your order on the <a href="orders-returns.html">Orders & Returns</a> page using your order number and email.</p>
-    </section>
-
-    <section class="faq-item">
-      <h3>How do I contact customer service?</h3>
-      <p>You can contact us via the <a href="contact.html">Contact</a> page.</p>
-    </section>
-  </main>
-
-  <div class="sticky-shipping">
-    📦 FREE STANDARD SHIPPING ON U.S. ORDERS $50+ | FREE EXPRESS SHIPPING ON U.S. ORDERS $100+
-  </div>
-
-  <aside id="cart-sidebar" class="cart-sidebar">
-    <h2>Your Cart</h2>
-    <div id="cart-items"></div>
-    <button id="checkout-button" onclick="location.href='checkout.html'">Checkout</button>
-    <button id="close-cart">Close</button>
-  </aside>
+    <script>
+        // FAQ Accordion Functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+                
+                question.classList.toggle('active');
+                answer.classList.toggle('active');
+                
+                if (question.classList.contains('active')) {
+                    icon.classList.replace('fa-chevron-down', 'fa-chevron-up');
+                } else {
+                    icon.classList.replace('fa-chevron-up', 'fa-chevron-down');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
