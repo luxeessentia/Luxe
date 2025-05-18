@@ -1,63 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cart - Luxe Essentials</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="cart.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart - Luxe Essentials</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Same head content as index.html -->
 </head>
 <body>
-  <div class="sidebar">
-    <div class="logo">Luxe Essentials</div>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="shop.html" class="active">Shop</a></li>
-      <li><a href="login.html">Login/Register</a></li>
-      <li><a href="orders.html">Orders & Returns</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="faq.html">FAQ</a></li>
-    </ul>
-  </div>
+    <!-- Reused Header/Navigation from index.html -->
 
-  <header class="mobile-header">
-    <button class="menu-toggle">&#9776;</button>
-    <div class="mobile-logo">Luxe Essentials</div>
-    <button id="cartToggle">&#128722;</button>
-  </header>
+    <main class="cart-content">
+        <h1>Your Shopping Bag</h1>
+        
+        <div class="cart-container">
+            <div class="cart-items">
+                <div class="cart-item">
+                    <div class="item-image">
+                        <img src="images/products/tote-bag.jpg" alt="Woven Tote Bag">
+                    </div>
+                    <div class="item-details">
+                        <h3>Cozy Woven Tote</h3>
+                        <p class="item-price">$60.00</p>
+                        <div class="quantity-selector">
+                            <button class="quantity-btn minus">-</button>
+                            <span class="quantity">1</span>
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                        <button class="remove-item">Remove</button>
+                    </div>
+                </div>
 
-  <main class="content">
-    <h1>Your Cart</h1>
-    <div id="cartItems">
-      <!-- Example cart item -->
-      <div class="cart-item" data-id="1">
-        <img src="images/bag1.jpg" alt="Bag 1" />
-        <div class="item-info">
-          <h3>Orange & White Plush Bag</h3>
-          <p>$60.00</p>
-          <div class="quantity-controls">
-            <button class="decrease">-</button>
-            <input type="text" class="quantity" value="1" readonly />
-            <button class="increase">+</button>
-          </div>
-          <button class="remove-item">Remove</button>
+                <div class="cart-item">
+                    <div class="item-image">
+                        <img src="images/products/wireless-earbuds.jpg" alt="Wireless Earbuds">
+                    </div>
+                    <div class="item-details">
+                        <h3>Wireless Earbuds</h3>
+                        <p class="item-price">$80.00</p>
+                        <div class="quantity-selector">
+                            <button class="quantity-btn minus">-</button>
+                            <span class="quantity">1</span>
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                        <button class="remove-item">Remove</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cart-summary">
+                <h2>Order Summary</h2>
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span>$140.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Shipping</span>
+                    <span>FREE</span>
+                </div>
+                <div class="summary-row">
+                    <span>Tax</span>
+                    <span>$12.60</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total</span>
+                    <span>$152.60</span>
+                </div>
+                <button class="checkout-btn">Proceed to Checkout</button>
+                <p class="continue-shopping">
+                    <a href="shop.html"><i class="fas fa-arrow-left"></i> Continue Shopping</a>
+                </p>
+
+                <div class="payment-icons">
+                    <img src="images/payment/visa.png" alt="Visa">
+                    <img src="images/payment/mastercard.png" alt="Mastercard">
+                    <!-- More payment icons -->
+                </div>
+            </div>
         </div>
-      </div>
-      <!-- Add more cart items dynamically here -->
-    </div>
+    </main>
 
-    <div class="cart-summary">
-      <h2>Cart Total: $60.00</h2>
-      <a href="checkout.html" class="btn checkout-btn">Checkout</a>
-    </div>
-  </main>
-
-  <div class="sticky-shipping">
-    📦 FREE STANDARD SHIPPING ON U.S. ORDERS $50+ | FREE EXPRESS SHIPPING ON U.S. ORDERS $100+
-  </div>
-
-  <script src="cart.js"></script>
-  <script src="script.js"></script>
+    <!-- Reused Footer from index.html -->
 </body>
 </html>
